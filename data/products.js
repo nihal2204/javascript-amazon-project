@@ -51,14 +51,13 @@ export function loadProducts (fun){
     products = JSON.parse(xhr.response).map((productDetails) => {
       return new Product(productDetails);
     });;
-  fun();
+    fun();
   });
 
   xhr.open('GET' , 'https://supersimplebackend.dev/products');
   xhr.send();
   let producthtml = '';
 }
-loadProducts();
 
 /*
 export const products = [
