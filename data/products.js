@@ -69,14 +69,13 @@ export function loadProducts (fun){
     products = JSON.parse(xhr.response).map((productDetails) => {
       return new Product(productDetails);
     });;
-    fun();
   });
 
   xhr.addEventListener('error' , () => {
     console.log('Unexpected Error. Try Again!');
   });
 
-  xhr.open('GET' , 'https://error.supersimplebackend.dev/products');
+  xhr.open('GET' , 'https://supersimplebackend.dev/products');
   xhr.send();
   let producthtml = '';
 }
